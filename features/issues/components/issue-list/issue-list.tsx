@@ -52,9 +52,9 @@ export function IssueList() {
           </tr>
         </thead>
         <tbody>
-          {(items || []).map((issue) => (
+          {(items || []).map((issue, index) => (
             <IssueRow
-              key={issue.id}
+              key={`issue-${index}`}
               issue={issue}
               projectLanguage={projectIdToLanguage[issue.projectId]}
             />

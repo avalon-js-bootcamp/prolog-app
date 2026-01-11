@@ -4,6 +4,7 @@ import { ProjectLanguage } from "@api/projects.types";
 import { IssueLevel } from "@api/issues.types";
 import type { Issue } from "@api/issues.types";
 import styles from "./issue-row.module.scss";
+import { useState } from "react";
 
 type IssueRowProps = {
   projectLanguage: ProjectLanguage;
@@ -19,6 +20,8 @@ const levelColors = {
 export function IssueRow({ projectLanguage, issue }: IssueRowProps) {
   const { name, message, stack, level, numEvents } = issue;
   const firstLineOfStackTrace = stack.split("\n")[1];
+
+  const [cachedNumEvents] = useState(numEvents);
 
   return (
     <tr className={styles.row}>
@@ -42,8 +45,8 @@ export function IssueRow({ projectLanguage, issue }: IssueRowProps) {
           {capitalize(level)}
         </Badge>
       </td>
-      <td className={styles.cell}>{numEvents}</td>
-      <td className={styles.cell}>{numEvents}</td>
+      <td className={styles.cell}>{cachedNumEvents}</td>
+      <td className={styles.cell}>{cachedNumEvents}</td>
     </tr>
   );
 }
