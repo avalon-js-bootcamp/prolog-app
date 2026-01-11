@@ -1,3 +1,4 @@
+import { useState } from "react";
 import capitalize from "lodash/capitalize";
 import { Badge, BadgeColor, BadgeSize } from "@features/ui";
 import { ProjectLanguage } from "@api/projects.types";
@@ -19,6 +20,11 @@ const levelColors = {
 export function IssueRow({ projectLanguage, issue }: IssueRowProps) {
   const { name, message, stack, level, numEvents } = issue;
   const firstLineOfStackTrace = stack.split("\n")[1];
+
+  // Initialize state from props - this creates the bug!
+  // When the key is index-based and items change order (pagination),
+  // React reuses the component but state doesn't update
+  const [cachedNumEvents] = useState(numEvents);
 
   return (
     <tr className={styles.row}>
@@ -42,8 +48,8 @@ export function IssueRow({ projectLanguage, issue }: IssueRowProps) {
           {capitalize(level)}
         </Badge>
       </td>
-      <td className={styles.cell}>{numEvents}</td>
-      <td className={styles.cell}>{numEvents}</td>
+      <td className={styles.cell}>{cachedNumEvents}</td>
+      <td className={styles.cell}>{cachedNumEvents}</td>
     </tr>
   );
 }
