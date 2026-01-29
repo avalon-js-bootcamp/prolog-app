@@ -3,33 +3,33 @@ import React from "react";
 import styles from "./badge.module.scss";
 
 export enum BadgeSize {
-	sm = "sm",
-	md = "md",
-	lg = "lg",
+  sm = "sm",
+  md = "md",
+  lg = "lg",
 }
 
 export enum BadgeColor {
-	primary = "primary",
-	gray = "gray",
-	error = "error",
-	warning = "warning",
-	success = "success",
+  primary = "primary",
+  gray = "gray",
+  error = "error",
+  warning = "warning",
+  success = "success",
 }
 
 type BadgeProps = {
-	children: React.ReactNode;
-	size?: BadgeSize;
-	color?: BadgeColor;
+  children: React.ReactNode;
+  size?: BadgeSize;
+  color?: BadgeColor;
 };
 
 export function Badge({
-	children,
-	size = BadgeSize.md,
-	color = BadgeColor.primary,
+  children,
+  size = BadgeSize.md,
+  color = BadgeColor.primary,
 }: BadgeProps) {
-	return (
-		<div className={classNames(styles.container, styles[size], styles[color])}>
-			{children}
-		</div>
-	);
+  return (
+    <div className={classNames(styles.container, styles[size], styles[color])}>
+      {children}
+    </div>
+  );
 }

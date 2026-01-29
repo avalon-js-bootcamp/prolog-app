@@ -5,12 +5,12 @@ import type { Issue } from "./issues.types";
 const ENDPOINT = "/issue";
 
 export async function getIssues(
-	page: number,
-	options?: { signal?: AbortSignal },
+  page: number,
+  options?: { signal?: AbortSignal },
 ) {
-	const { data } = await axios.get<Page<Issue>>(ENDPOINT, {
-		params: { page },
-		signal: options?.signal,
-	});
-	return data;
+  const { data } = await axios.get<Page<Issue>>(ENDPOINT, {
+    params: { page },
+    signal: options?.signal,
+  });
+  return data;
 }
