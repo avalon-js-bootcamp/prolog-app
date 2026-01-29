@@ -1,32 +1,32 @@
 import React, { useState } from "react";
 
 type NavigationContextProviderProps = {
-  children: React.ReactNode;
+	children: React.ReactNode;
 };
 
 const defaultContext = {
-  isSidebarCollapsed: false,
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  toggleSidebar: () => {},
+	isSidebarCollapsed: false,
+	// biome-ignore lint/suspicious/noEmptyBlockStatements: Default no-op function for context
+	toggleSidebar: () => {},
 };
 
 export const NavigationContext = React.createContext(defaultContext);
 
 export function NavigationProvider({
-  children,
+	children,
 }: NavigationContextProviderProps) {
-  const [isSidebarCollapsed, setSidebarCollapsed] = useState(
-    defaultContext.isSidebarCollapsed,
-  );
+	const [isSidebarCollapsed, setSidebarCollapsed] = useState(
+		defaultContext.isSidebarCollapsed,
+	);
 
-  return (
-    <NavigationContext.Provider
-      value={{
-        isSidebarCollapsed,
-        toggleSidebar: () => setSidebarCollapsed((isCollapsed) => !isCollapsed),
-      }}
-    >
-      {children}
-    </NavigationContext.Provider>
-  );
+	return (
+		<NavigationContext.Provider
+			value={{
+				isSidebarCollapsed,
+				toggleSidebar: () => setSidebarCollapsed((isCollapsed) => !isCollapsed),
+			}}
+		>
+			{children}
+		</NavigationContext.Provider>
+	);
 }
