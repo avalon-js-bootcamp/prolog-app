@@ -1,10 +1,10 @@
-import capitalize from "lodash/capitalize";
-import { Badge, BadgeColor, BadgeSize } from "@features/ui";
-import { ProjectLanguage } from "@api/projects.types";
-import { IssueLevel } from "@api/issues.types";
 import type { Issue } from "@api/issues.types";
-import styles from "./issue-row.module.scss";
+import { IssueLevel } from "@api/issues.types";
+import { ProjectLanguage } from "@api/projects.types";
+import { Badge, BadgeColor, BadgeSize } from "@features/ui";
+import capitalize from "lodash/capitalize";
 import { useState } from "react";
+import styles from "./issue-row.module.scss";
 
 type IssueRowProps = {
   projectLanguage: ProjectLanguage;

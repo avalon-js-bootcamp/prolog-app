@@ -1,5 +1,5 @@
-import { ButtonHTMLAttributes } from "react";
 import classNames from "classnames";
+import { ButtonHTMLAttributes } from "react";
 import styles from "./button.module.scss";
 
 export function Button(props: ButtonHTMLAttributes<HTMLButtonElement>) {

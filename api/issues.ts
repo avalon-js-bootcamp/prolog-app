@@ -1,6 +1,6 @@
+import type { Page } from "@typings/page.types";
 import { axios } from "./axios";
 import type { Issue } from "./issues.types";
-import type { Page } from "@typings/page.types";
 
 const ENDPOINT = "/issue";
 

@@ -6,7 +6,7 @@ type NavigationContextProviderProps = {
 
 const defaultContext = {
   isSidebarCollapsed: false,
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  // biome-ignore lint/suspicious/noEmptyBlockStatements: Default no-op function for context
   toggleSidebar: () => {},
 };
 

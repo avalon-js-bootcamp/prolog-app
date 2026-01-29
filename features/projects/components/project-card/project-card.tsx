@@ -1,9 +1,9 @@
-import Link from "next/link";
-import capitalize from "lodash/capitalize";
-import { Badge, BadgeColor } from "@features/ui";
-import { Routes } from "@config/routes";
-import { ProjectLanguage, ProjectStatus } from "@api/projects.types";
 import type { Project } from "@api/projects.types";
+import { ProjectLanguage, ProjectStatus } from "@api/projects.types";
+import { Routes } from "@config/routes";
+import { Badge, BadgeColor } from "@features/ui";
+import capitalize from "lodash/capitalize";
+import Link from "next/link";
 import styles from "./project-card.module.scss";
 
 type ProjectCardProps = {

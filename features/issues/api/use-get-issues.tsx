@@ -1,8 +1,8 @@
-import { useEffect } from "react";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { getIssues } from "@api/issues";
-import type { Page } from "@typings/page.types";
 import type { Issue } from "@api/issues.types";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
+import type { Page } from "@typings/page.types";
+import { useEffect } from "react";
 
 const QUERY_KEY = "issues";
 

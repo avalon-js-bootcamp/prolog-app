@@ -1,6 +1,6 @@
-import React from "react";
 import { Button } from "@features/ui";
 import classNames from "classnames";
+import React from "react";
 import styles from "./menu-item-link.module.scss";
 
 type MenuItemProps = {

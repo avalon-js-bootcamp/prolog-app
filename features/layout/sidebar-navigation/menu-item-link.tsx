@@ -1,6 +1,6 @@
+import classNames from "classnames";
 import Link from "next/link";
 import React from "react";
-import classNames from "classnames";
 import styles from "./menu-item-link.module.scss";
 
 type MenuItemProps = {

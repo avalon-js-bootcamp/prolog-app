@@ -1,7 +1,7 @@
-import React from "react";
-import { Meta, StoryFn } from "@storybook/react";
-import { ProjectCard } from "./project-card";
 import { ProjectLanguage, ProjectStatus } from "@api/projects.types";
+import { Meta, StoryFn } from "@storybook/react";
+import React from "react";
+import { ProjectCard } from "./project-card";
 
 export default {
   title: "Project/ProjectCard",
